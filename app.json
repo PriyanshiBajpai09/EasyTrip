@@ -38,7 +38,8 @@
       "typedRoutes": true
     },
     "extra": {
-      "googleMapsApiKey": "AIzaSyANMWUSvDmaP9e6Rm-8XPW-mOX5w6aMNpc"
+      "googleMapsApiKey": "AIzaSyANMWUSvDmaP9e6Rm-8XPW-mOX5w6aMNpc",
+      "expoPublicTogetherApiKey": "5316d579348ed5b6554c830bf9ac5417f921f991019bfc04851a28a00d293d2e" 
     }
   }
 }  

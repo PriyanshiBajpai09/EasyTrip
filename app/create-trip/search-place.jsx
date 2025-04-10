@@ -24,10 +24,10 @@ export default function SearchPlace() {
     if (text.length > 2) {
       try {
         const response = await fetch(
-          `https://nominatim.openstreetmap.org/search?format=json&q=${text}`,
+          `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(text)}`,
           {
             headers: {
-              "User-Agent": "YourAppName/1.0 (your@email.com)", // Replace with your app details
+              "User-Agent": "YourAppName/1.0 (your@email.com)",
             },
           }
         );
@@ -68,8 +68,10 @@ export default function SearchPlace() {
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() => {
-              setTripData({ ...tripData, location: item.display_name });
-              router.push('/create-trip/select-traveler'); // 🔥 Fixed Route
+              // Save the selected location as destination
+              setTripData({ ...tripData, destination: item.display_name });
+              // Navigate to the select-traveler page
+              router.push('/create-trip/select-traveler');
             }}
             style={{
               padding: 10,
